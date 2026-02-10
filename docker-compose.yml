@@ -13,5 +13,5 @@ services:
     volumes:
       - ./catkin_ws:/root/catkin_ws
       - /tmp/.X11-unix:/tmp/.X11-unix
-      - ../federated-learning-ROS:/root/catkin_ws/src/dev_fl_robot_pkg
+      - ../Federated-RL-ROS:/root/catkin_ws/src/dev_fl_robot_pkg
 
