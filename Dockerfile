@@ -43,7 +43,7 @@ RUN rosdep update
 
 # Auto-source ROS
 RUN echo "source /opt/ros/noetic/setup.bash" >> /etc/bash.bashrc
-
+RUN echo "source /root/catkin_ws/devel/setup.bash" >> /root/.bashrc
 # Workspace
 WORKDIR /root/catkin_ws
 RUN mkdir -p src
