@@ -1,9 +1,8 @@
-version: "3.9"
-
 services:
   ros:
     build: .
     container_name: ros_noetic
+    command: bash -c "source /opt/ros/noetic/setup.bash && tail -f /dev/null"
     stdin_open: true
     tty: true
     network_mode: host
