@@ -37,6 +37,12 @@ RUN apt update && apt install -y \
     python3-catkin-tools \
     && rm -rf /var/lib/apt/lists/*
 
+    # ML dependencies
+RUN pip3 install --no-cache-dir \
+    torch \
+    torchvision \
+    torchaudio
+    
 # rosdep
 RUN rosdep init || true
 RUN rosdep update
