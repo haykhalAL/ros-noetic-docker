@@ -1,0 +1,31 @@
+# =========================
+# ROS / Catkin (DO NOT TRACK)
+# =========================
+catkin_ws/build/
+catkin_ws/devel/
+catkin_ws/install/
+catkin_ws/logs/
+catkin_ws/.catkin_tools/
+catkin_ws/.catkin_workspace
+catkin_ws/src/
+
+# =========================
+# ROS runtime
+# =========================
+.ros/
+
+# =========================
+# VS Code
+# =========================
+.vscode/
+
+# =========================
+# Python
+# =========================
+__pycache__/
+*.pyc
+
+# =========================
+# OS junk
+# =========================
+.DS_Store
