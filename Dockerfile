@@ -27,7 +27,8 @@ RUN echo "deb [signed-by=/etc/apt/keyrings/ros.gpg] \
     > /etc/apt/sources.list.d/ros1.list
 
 # Install ROS + Gazebo
-RUN apt update && apt install -y \
+RUN apt-get update --fix-missing && \
+    apt-get install -y --no-install-recommends \
     ros-noetic-desktop-full \
     ros-noetic-gazebo-ros-pkgs \
     ros-noetic-gazebo-ros-control \

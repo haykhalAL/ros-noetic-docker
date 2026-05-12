@@ -2,17 +2,33 @@ services:
   ros:
     build: .
     container_name: ros_noetic
+
     command: bash -c "source /opt/ros/noetic/setup.bash && tail -f /dev/null"
+
     stdin_open: true
     tty: true
+
     network_mode: host
+
+    runtime: nvidia
+
     environment:
       - DISPLAY=${DISPLAY}
       - QT_X11_NO_MITSHM=1
       - TURTLEBOT3_MODEL=burger
+
+      - NVIDIA_VISIBLE_DEVICES=all
+      - NVIDIA_DRIVER_CAPABILITIES=all
 
     volumes:
       - ./catkin_ws:/root/catkin_ws
       - /tmp/.X11-unix:/tmp/.X11-unix
       - ../Federated-RL-ROS:/root/catkin_ws/src/
 
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
